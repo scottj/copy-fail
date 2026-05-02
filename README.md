@@ -2,7 +2,7 @@
 
 - [Xint's Technical Writeup](https://xint.io/blog/copy-fail-linux-distributions)
 - [Reformatted Exploit Script](copyfail.py)
-- [Exploit Walkthrough](walkthrough)
+- [Defensive Walkthrough of Exploit Code](walkthrough)
 
 ## Tested Distro / Version
 
