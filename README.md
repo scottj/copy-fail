@@ -1,8 +1,8 @@
 # Copy Fail - CVE-2026-31431
 
 - [Xint's Technical Writeup](https://xint.io/blog/copy-fail-linux-distributions)
-- [Reformatted Exploit Script](copyfail.py)
-- [Defensive Walkthrough of Exploit Code](walkthrough)
+- [Reformatted Exploit Script](https://github.com/scottj/copy-fail/blob/main/copyfail.py)
+- [Defensive Walkthrough of Exploit Code](https://scottj.info/copy-fail/walkthrough.html)
 
 ## Tested Distro / Version
 
