@@ -1,0 +1,275 @@
+---
+---
+
+@import "jekyll-theme-primer";
+
+/* Native controls can follow the active theme */
+:root {
+  color-scheme: light dark;
+}
+
+/* Light theme tokens */
+html[data-color-mode="light"] {
+  --page-bg: #ffffff;
+  --page-fg: #24292f;
+  --page-muted: #57606a;
+  --page-border: #d0d7de;
+  --page-link: #0969da;
+
+  --surface-1: #f6f8fa;   /* code blocks / table headers */
+  --surface-2: #ffffff;   /* table cells / page surfaces */
+  --surface-3: #f6f8fa;   /* inline code */
+}
+
+/* Dark theme tokens */
+html[data-color-mode="dark"] {
+  --page-bg: #0d1117;
+  --page-fg: #c9d1d9;
+  --page-muted: #8b949e;
+  --page-border: #30363d;
+  --page-link: #58a6ff;
+
+  --surface-1: #161b22;
+  --surface-2: #0d1117;
+  --surface-3: #161b22;
+}
+
+/* No-JS fallback */
+@media (prefers-color-scheme: dark) {
+  html:not([data-color-mode]) {
+    --page-bg: #0d1117;
+    --page-fg: #c9d1d9;
+    --page-muted: #8b949e;
+    --page-border: #30363d;
+    --page-link: #58a6ff;
+    --surface-1: #161b22;
+    --surface-2: #0d1117;
+    --surface-3: #161b22;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  html:not([data-color-mode]) {
+    --page-bg: #ffffff;
+    --page-fg: #24292f;
+    --page-muted: #57606a;
+    --page-border: #d0d7de;
+    --page-link: #0969da;
+    --surface-1: #f6f8fa;
+    --surface-2: #ffffff;
+    --surface-3: #f6f8fa;
+  }
+}
+
+/* Global page styling */
+body {
+  background: var(--page-bg);
+  color: var(--page-fg);
+}
+
+a {
+  color: var(--page-link);
+}
+
+p, li, td, th, blockquote, dd, dt {
+  color: var(--page-fg);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--page-fg);
+}
+
+hr,
+blockquote,
+table th,
+table td,
+.markdown-body table th,
+.markdown-body table td {
+  border-color: var(--page-border);
+}
+
+/* Inline code */
+code,
+.markdown-body code {
+  background: var(--surface-3);
+  color: var(--page-fg);
+  border-color: var(--page-border);
+}
+
+/* Plain code blocks */
+pre,
+.markdown-body pre {
+  background: var(--surface-1);
+  color: var(--page-fg);
+  border: 1px solid var(--page-border);
+}
+
+pre code,
+.markdown-body pre code {
+  background: transparent;
+  color: inherit;
+  border: 0;
+}
+
+/* Rouge/Jekyll highlighted blocks */
+.highlight,
+.markdown-body .highlight {
+  background: var(--surface-1);
+  color: var(--page-fg);
+  border: 1px solid var(--page-border);
+}
+
+.highlight pre,
+.markdown-body .highlight pre {
+  background: transparent;
+  color: inherit;
+  border: 0;
+}
+
+/* Tables */
+table,
+.markdown-body table {
+  color: var(--page-fg);
+  background: var(--surface-2);
+}
+
+table th,
+.markdown-body table th {
+  background: var(--surface-1);
+  color: var(--page-fg);
+}
+
+table td,
+.markdown-body table td {
+  background: var(--surface-2);
+  color: var(--page-fg);
+}
+
+/* Zebra rows */
+table tr:nth-child(2n),
+.markdown-body table tr:nth-child(2n) {
+  background: color-mix(in srgb, var(--surface-1) 70%, var(--surface-2));
+}
+
+/* ===== Rouge syntax highlighting for dark mode ===== */
+
+html[data-color-mode="dark"] .highlight,
+html[data-color-mode="dark"] .highlight pre,
+html[data-color-mode="dark"] .highlight code,
+html[data-color-mode="dark"] .markdown-body .highlight,
+html[data-color-mode="dark"] .markdown-body .highlight pre,
+html[data-color-mode="dark"] .markdown-body .highlight code {
+  color: #c9d1d9;
+}
+
+/* comments */
+html[data-color-mode="dark"] .highlight .c,
+html[data-color-mode="dark"] .highlight .ch,
+html[data-color-mode="dark"] .highlight .cd,
+html[data-color-mode="dark"] .highlight .cm,
+html[data-color-mode="dark"] .highlight .cp,
+html[data-color-mode="dark"] .highlight .cpf,
+html[data-color-mode="dark"] .highlight .c1,
+html[data-color-mode="dark"] .highlight .cs {
+  color: #8b949e;
+  font-style: italic;
+}
+
+/* keywords */
+html[data-color-mode="dark"] .highlight .k,
+html[data-color-mode="dark"] .highlight .kc,
+html[data-color-mode="dark"] .highlight .kd,
+html[data-color-mode="dark"] .highlight .kn,
+html[data-color-mode="dark"] .highlight .kp,
+html[data-color-mode="dark"] .highlight .kr,
+html[data-color-mode="dark"] .highlight .kt {
+  color: #ff7b72;
+}
+
+/* operators / punctuation-ish emphasis */
+html[data-color-mode="dark"] .highlight .o,
+html[data-color-mode="dark"] .highlight .ow {
+  color: #ff7b72;
+}
+
+/* strings */
+html[data-color-mode="dark"] .highlight .s,
+html[data-color-mode="dark"] .highlight .sa,
+html[data-color-mode="dark"] .highlight .sb,
+html[data-color-mode="dark"] .highlight .sc,
+html[data-color-mode="dark"] .highlight .dl,
+html[data-color-mode="dark"] .highlight .sd,
+html[data-color-mode="dark"] .highlight .s1,
+html[data-color-mode="dark"] .highlight .s2,
+html[data-color-mode="dark"] .highlight .se,
+html[data-color-mode="dark"] .highlight .sh,
+html[data-color-mode="dark"] .highlight .si,
+html[data-color-mode="dark"] .highlight .sx,
+html[data-color-mode="dark"] .highlight .sr,
+html[data-color-mode="dark"] .highlight .ss {
+  color: #a5d6ff;
+}
+
+/* numbers / constants */
+html[data-color-mode="dark"] .highlight .m,
+html[data-color-mode="dark"] .highlight .mb,
+html[data-color-mode="dark"] .highlight .mf,
+html[data-color-mode="dark"] .highlight .mh,
+html[data-color-mode="dark"] .highlight .mi,
+html[data-color-mode="dark"] .highlight .mo,
+html[data-color-mode="dark"] .highlight .il {
+  color: #79c0ff;
+}
+
+/* names, classes, functions, attrs */
+html[data-color-mode="dark"] .highlight .na,
+html[data-color-mode="dark"] .highlight .nb,
+html[data-color-mode="dark"] .highlight .bp,
+html[data-color-mode="dark"] .highlight .nc,
+html[data-color-mode="dark"] .highlight .nd,
+html[data-color-mode="dark"] .highlight .ne,
+html[data-color-mode="dark"] .highlight .nf,
+html[data-color-mode="dark"] .highlight .fm,
+html[data-color-mode="dark"] .highlight .nl,
+html[data-color-mode="dark"] .highlight .nn,
+html[data-color-mode="dark"] .highlight .no,
+html[data-color-mode="dark"] .highlight .nt,
+html[data-color-mode="dark"] .highlight .nv,
+html[data-color-mode="dark"] .highlight .vc,
+html[data-color-mode="dark"] .highlight .vg,
+html[data-color-mode="dark"] .highlight .vi,
+html[data-color-mode="dark"] .highlight .vm,
+html[data-color-mode="dark"] .highlight .nx {
+  color: #d2a8ff;
+}
+
+/* regex / special escapes / inserted text */
+html[data-color-mode="dark"] .highlight .gi {
+  color: #aff5b4;
+}
+
+html[data-color-mode="dark"] .highlight .gd {
+  color: #ffdcd7;
+}
+
+html[data-color-mode="dark"] .highlight .gh,
+html[data-color-mode="dark"] .highlight .gu {
+  color: #1f6feb;
+  font-weight: 600;
+}
+
+/* warnings / errors */
+html[data-color-mode="dark"] .highlight .err,
+html[data-color-mode="dark"] .highlight .gr,
+html[data-color-mode="dark"] .highlight .gt {
+  color: #ff7b72;
+}
+
+/* generic strong/emphasis from Rouge */
+html[data-color-mode="dark"] .highlight .gs {
+  font-weight: 700;
+}
+
+html[data-color-mode="dark"] .highlight .ge {
+  font-style: italic;
+}
